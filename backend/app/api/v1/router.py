@@ -3,6 +3,7 @@
 from fastapi import APIRouter
 
 from app.config import settings
+from app.api.routes.review import router as review_router
 
 
 # Create v1 router
@@ -19,9 +20,5 @@ async def v1_root():
     }
 
 
-# Future routers will be included here:
-# from app.api.v1.endpoints import auth, documents, employees, categories
-# router.include_router(auth.router, prefix="/auth", tags=["Authentication"])
-# router.include_router(documents.router, prefix="/documents", tags=["Documents"])
-# router.include_router(employees.router, prefix="/employees", tags=["Employees"])
-# router.include_router(categories.router, prefix="/categories", tags=["Categories"])
+# Include routers
+router.include_router(review_router, prefix="/review", tags=["Review Workflow"])

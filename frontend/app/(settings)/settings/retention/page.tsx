@@ -145,7 +145,7 @@ export default function RetentionPage() {
                         <TableCell>
                           <div className="flex items-center gap-2">
                             <Calendar className="h-4 w-4 text-slate-400" />
-                            <span>{formatDays(policy.retention_period_days)}</span>
+                            <span>{formatDays(policy.retention_period_days ?? policy.retention_days)}</span>
                           </div>
                         </TableCell>
                         <TableCell>

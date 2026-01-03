@@ -109,7 +109,7 @@ export default function LegalHoldsPage() {
                   <TableBody>
                     {holds.map((hold) => (
                       <TableRow key={hold.id}>
-                        <TableCell className="font-medium">{hold.title}</TableCell>
+                        <TableCell className="font-medium">{hold.title || hold.name}</TableCell>
                         <TableCell>
                           <span className={`inline-flex items-center px-2.5 py-1 rounded-full text-xs font-medium ${
                             hold.status === 'active'
